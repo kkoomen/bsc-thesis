@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from transformers import AutoTokenizer, AutoModelForCausalLM, TextIteratorStreamer, BitsAndBytesConfig
 import torch
 from threading import Thread
@@ -41,6 +43,10 @@ print("💬 Chat with LLaMA 2 (type 'exit' to quit)")
 while True:
     user_input = input("> ")
     if user_input.lower() in {"exit", "quit"}:
+        break
+
+    if user_input.lower() in {"clear", "reset"}:
+        chat_history = []
         break
 
     full_prompt = build_prompt(user_input)
