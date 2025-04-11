@@ -1,6 +1,9 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, TextIteratorStreamer, BitsAndBytesConfig
 import torch
 from threading import Thread
+from dotenv import load_dotenv
+
+load_dotenv()
 
 model_id = "meta-llama/Llama-2-7b-chat-hf"
 
