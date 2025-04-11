@@ -47,7 +47,7 @@ while True:
 
     if user_input.lower() in {"clear", "reset"}:
         chat_history = []
-        break
+        continue
 
     full_prompt = build_prompt(user_input)
     inputs = tokenizer(full_prompt, return_tensors="pt").to(model.device)
